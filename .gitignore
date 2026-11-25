@@ -1,0 +1,11 @@
+# Baysöz Labs <baysozlabs@proton.me> — baysoz-provenancegate
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.semgrep/
+*.sarif

@@ -1,0 +1,36 @@
+# pyproject.toml — Baysöz Labs <baysozlabs@proton.me> — baysoz-provenancegate
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "baysoz-provenancegate"
+version = "1.0.0"
+description = "Offline SLSA provenance and DSSE trust gate with SARIF CI enforcement by Baysöz Labs <baysozlabs@proton.me>"
+readme = "README.md"
+requires-python = ">=3.13"
+license = { text = "MIT" }
+authors = [{ name = "Baysöz Labs", email = "baysozlabs@proton.me" }]
+keywords = ["slsa", "provenance", "dsse", "in-toto", "sigstore", "supply-chain", "sarif", "devops"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: System Administrators",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Security",
+  "Topic :: Software Development :: Build Tools",
+]
+dependencies = ["cryptography>=44"]
+
+[project.scripts]
+baysoz-provenancegate = "baysoz_provenancegate.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101"]
